@@ -1,3 +1,2 @@
 # docker-laravel
-docker-laravel
-We have release
+docker-laravel image with php 7.1
