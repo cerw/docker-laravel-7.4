@@ -37,6 +37,12 @@ curl -sL https://deb.nodesource.com/setup_8.x | bash -
 apt-get -y install nodejs
 
 
+# BrowsetrStuck
+
+curl -sS -o /tmp/BrowserStackLocal.zip https://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip && \
+unzip -qq /tmp/BrowserStackLocal.zip -d /opt/ && \
+chmod +x /opt/BrowserStackLocal
+# ./BrowserStackLocal --key KpxVoAzwwJDp5AF3vKb5
 # Chrome
 
 useradd automation --shell /bin/bash --create-home
