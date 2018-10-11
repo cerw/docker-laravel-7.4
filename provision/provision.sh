@@ -12,7 +12,7 @@ apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold"
 # install PHP
 apt-get -y install curl php-zip zip php7.2-gd unzip bzip2 php-cli php-imagick imagemagick git \
 php-curl php-xml  php7.2-sqlite3 php-mbstring php-xml php-mysqlnd php-curl php-xdebug \
-memcached php-memcached php7.2-soap build-essential libpng-dev openntpd php7.2-bcmath
+memcached php-memcached php7.2-soap build-essential libpng-dev openntpd php7.2-bcmath mysql-client-5.7
 
 
 /usr/bin/timedatectl set-timezone Australia/Sydney
