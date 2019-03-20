@@ -2,7 +2,7 @@
 # Start with a base image
 # ------------------------------------------------------------------------------
 
-FROM ubuntu:18.04
+FROM ubuntu:latest
 LABEL maintainer "Petr Cervenka <petr@cervenka.space>"
 LABEL version="0.5"
 ENV DEBIAN_FRONTEND noninteractive
