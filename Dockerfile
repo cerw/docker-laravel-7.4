@@ -23,6 +23,7 @@ RUN /provision/provision.sh
 
 ADD ./etc/supervisord.conf /etc/
 ADD ./etc/supervisor /etc/supervisor
+ADD ./etc/ImageMagick-6/policy.xml /etc/ImageMagick-6/policy.xml
 VOLUME [ "/var/log/supervisor" ]
 # CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
 
