@@ -66,6 +66,11 @@ if [ ! -e "${VNC_STORE_PWD_FILE}" -o -n "${VNC_PASSWORD}" ]; then
     chown -R automation /home/automation
 fi
 
+#wkhtml
+wget https://downloads.wkhtmltopdf.org/0.12/0.12.5/wkhtmltox_0.12.5-1.bionic_amd64.deb
+dpkg -i wkhtmltox_0.12.5-1.bionic_amd64.deb
+rm -rf wkhtmltox_0.12.5-1.bionic_amd64.deb
+
 # ------------------------------------------------------------------------------
 # Clean up
 # ------------------------------------------------------------------------------
