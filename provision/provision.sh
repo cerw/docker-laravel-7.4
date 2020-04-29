@@ -14,10 +14,8 @@ apt-get -y install curl php-zip zip php7.2-gd unzip bzip2 php-cli php-imagick im
 php-curl php-xml  php7.2-sqlite3 php-mbstring php-xml php-mysqlnd php-curl php-xdebug \
 memcached php-memcached php7.2-soap build-essential libpng-dev openntpd php7.2-bcmath mysql-client-5.7 ghostscript
 
-
-
 # install latex
-apt-get -y install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra  texlive-latex-extra
+apt-get -y install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra  texlive-latex-extra latexmk
 
 /usr/bin/timedatectl set-timezone Australia/Sydney
 
