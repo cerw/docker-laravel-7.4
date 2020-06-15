@@ -40,7 +40,7 @@ apt-get -y install nodejs
 
 # Chrome
 
-apt-get -yqq install supervisor vim fonts-ipafont-gothic xfonts-cyrillic xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable
+apt-get -yqq install supervisorlibjpeg62-turbo  vim fonts-ipafont-gothic xfonts-cyrillic xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable
 
 CHROMEDRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE`
 mkdir -p /opt/chromedriver-$CHROMEDRIVER_VERSION && \
