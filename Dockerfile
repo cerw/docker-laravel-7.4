@@ -21,6 +21,10 @@ RUN mkdir /provision
 ADD provision /provision
 RUN /provision/provision.sh
 
+RUN apt-get update && apt-get install -y locales && rm -rf /var/lib/apt/lists/* \
+    && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
+ENV LANG en_US.utf8
+
 ADD ./etc/supervisord.conf /etc/
 ADD ./etc/supervisor /etc/supervisor
 ADD ./etc/ImageMagick-6/policy.xml /etc/ImageMagick-6/policy.xml

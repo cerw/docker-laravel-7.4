@@ -38,11 +38,9 @@ chmod 755 /usr/local/bin/composer
 curl -sL https://deb.nodesource.com/setup_8.x | bash -
 apt-get -y install nodejs
 
-
 # Chrome
-useradd automation --shell /bin/bash --create-home
-apt-get -yqq install xvfb tinywm supervisor vim
-apt-get -yqq install fonts-ipafont-gothic xfonts-cyrillic xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable
+
+apt-get -yqq install supervisor vim fonts-ipafont-gothic xfonts-cyrillic xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable
 
 CHROMEDRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE`
 mkdir -p /opt/chromedriver-$CHROMEDRIVER_VERSION && \
@@ -52,26 +50,17 @@ rm /tmp/chromedriver_linux64.zip && \
 chmod +x /opt/chromedriver-$CHROMEDRIVER_VERSION/chromedriver && \
 ln -fs /opt/chromedriver-$CHROMEDRIVER_VERSION/chromedriver /usr/local/bin/chromedriver
 
-
 curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
-    echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list && \
-    apt-get -yqq update && \
-    apt-get -yqq install google-chrome-stable x11vnc ca-certificates
+echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list && \
+apt-get -yqq update && \
+apt-get -yqq install google-chrome-stable ca-certificates
 
-# vnc
 
-VNC_STORE_PWD_FILE=/home/automation/.vnc/passwd
-if [ ! -e "${VNC_STORE_PWD_FILE}" -o -n "${VNC_PASSWORD}" ]; then
-    mkdir -vp /home/automation/.vnc
-    # the default VNC password is 'hola'
-    x11vnc -storepasswd ${VNC_PASSWORD:-hola} ${VNC_STORE_PWD_FILE}
-    chown -R automation /home/automation
-fi
 
 #wkhtml
-wget https://downloads.wkhtmltopdf.org/0.12/0.12.5/wkhtmltox_0.12.5-1.bionic_amd64.deb
-dpkg -i wkhtmltox_0.12.5-1.bionic_amd64.deb
-rm -rf wkhtmltox_0.12.5-1.bionic_amd64.deb
+wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.buster_amd64.deb
+dpkg -i wkhtmltox_0.12.6-1.buster_amd64.deb
+rm -rf wkhtmltox_0.12.6-1.buster_amd64.deb
 
 # ------------------------------------------------------------------------------
 # Clean up
