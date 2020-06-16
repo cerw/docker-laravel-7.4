@@ -2,6 +2,11 @@
 # ------------------------------------------------------------------------------
 # Provisioning script for the docker-laravel image
 # ------------------------------------------------------------------------------
+
+apt-get update 
+apt-get install -y locales 
+localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
+
 apt-get upgrade -y -o Dpkg::Options::="--force-confold"
 
 # ------------------------------------------------------------------------------
@@ -67,6 +72,9 @@ apt-get -yqq install google-chrome-stable ca-certificates xfonts-75dpi xfonts-ba
 wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.buster_amd64.deb
 dpkg -i wkhtmltox_0.12.6-1.buster_amd64.deb
 rm -rf wkhtmltox_0.12.6-1.buster_amd64.deb
+
+# clean up 
+rm -rf /var/lib/apt/lists/* 
 
 # ------------------------------------------------------------------------------
 # Clean up
