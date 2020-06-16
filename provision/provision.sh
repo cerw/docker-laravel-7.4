@@ -4,8 +4,10 @@
 # ------------------------------------------------------------------------------
 
 apt-get update 
-apt-get install -y locales 
+apt-get install -y locales systemd
 localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
+
+/usr/bin/timedatectl set-timezone Australia/Perth
 
 apt-get upgrade -y -o Dpkg::Options::="--force-confold"
 
@@ -14,18 +16,18 @@ apt-get upgrade -y -o Dpkg::Options::="--force-confold"
 # ------------------------------------------------------------------------------
 
 # install PHP
-apt-get -y install curl php-zip zip php7.2-gd unzip bzip2 php-cli php-imagick imagemagick git \
+apt-get -y install wget curl php-zip zip php7.2-gd unzip bzip2 php-cli php-imagick imagemagick git \
 php-curl php-xml  php7.2-sqlite3 php-mbstring php-xml php-mysqlnd php-curl php-xdebug \
 memcached php-memcached php7.2-soap build-essential libpng-dev openntpd php7.2-bcmath mysql-client-5.7 ghostscript
 
 # Cypress
 
-apt-get install -y  libgtk2.0-0  libnotify-dev  libgconf-2-4  libnss3 libxss1 libasound2 xvfb
+apt-get install -y  libgtk2.0-0  libnotify-dev  libgconf-2-4  libnss3 libxss1 libasound2 xvfb libjpeg62
 
 # install latex
 apt-get -yqq install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra  texlive-latex-extra latexmk
 
-/usr/bin/timedatectl set-timezone Australia/Perth
+
 
 #phpdismod xdebug
 #hpdismod -s cli xdebug
@@ -66,7 +68,7 @@ ln -fs /opt/chromedriver-$CHROMEDRIVER_VERSION/chromedriver /usr/local/bin/chrom
 curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
 echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list && \
 apt-get -yqq update && \
-apt-get -yqq install google-chrome-stable ca-certificates xfonts-75dpi xfonts-base libjpeg62-turbo
+apt-get -yqq install google-chrome-stable ca-certificates xfonts-75dpi xfonts-base
 
 #wkhtml
 wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.buster_amd64.deb
