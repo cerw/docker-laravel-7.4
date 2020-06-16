@@ -15,7 +15,11 @@ php-curl php-xml  php7.2-sqlite3 php-mbstring php-xml php-mysqlnd php-curl php-x
 memcached php-memcached php7.2-soap build-essential libpng-dev openntpd php7.2-bcmath mysql-client-5.7 ghostscript
 
 # install latex
-apt-get -y install xvfb texlive-latex-base texlive-fonts-recommended texlive-fonts-extra  texlive-latex-extra latexmk
+apt-get -y install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra  texlive-latex-extra latexmk
+
+# cypress
+apt-get install libgtk2.0-0 libgtk-3-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
+
 
 /usr/bin/timedatectl set-timezone Australia/Sydney
 
