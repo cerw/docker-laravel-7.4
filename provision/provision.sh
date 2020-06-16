@@ -42,6 +42,8 @@ chmod 755 /usr/local/bin/composer
 curl -sL https://deb.nodesource.com/setup_8.x | bash -
 apt-get -y install nodejs
 
+
+useradd automation --shell /bin/bash --create-home
 # Chrome
 
 apt-get -yqq install supervisor  vim fonts-ipafont-gothic xfonts-cyrillic xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable
