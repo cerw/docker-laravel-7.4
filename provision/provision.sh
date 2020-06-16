@@ -2,8 +2,7 @@
 # ------------------------------------------------------------------------------
 # Provisioning script for the docker-laravel image
 # ------------------------------------------------------------------------------
-
-apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold"
+apt-get upgrade -y -o Dpkg::Options::="--force-confold"
 
 # ------------------------------------------------------------------------------
 # PHP7
@@ -14,14 +13,14 @@ apt-get -y install curl php-zip zip php7.2-gd unzip bzip2 php-cli php-imagick im
 php-curl php-xml  php7.2-sqlite3 php-mbstring php-xml php-mysqlnd php-curl php-xdebug \
 memcached php-memcached php7.2-soap build-essential libpng-dev openntpd php7.2-bcmath mysql-client-5.7 ghostscript
 
+# Cypress
+
+apt-get install -y  libgtk2.0-0  libnotify-dev  libgconf-2-4  libnss3 libxss1 libasound2 xvfb
+
 # install latex
 apt-get -yqq install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra  texlive-latex-extra latexmk
 
-# cypress
-apt-get  -yqq install systemd libgtk2.0-0 libgtk-3-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
-
-
-/usr/bin/timedatectl set-timezone Australia/Sydney
+/usr/bin/timedatectl set-timezone Australia/Perth
 
 #phpdismod xdebug
 #hpdismod -s cli xdebug
@@ -39,12 +38,12 @@ chmod 755 /usr/local/bin/composer
 # Node and npmu
 # ------------------------------------------------------------------------------
 
-curl -sL https://deb.nodesource.com/setup_8.x | bash -
-apt-get -yqq install nodejs
+# curl -sL https://deb.nodesource.com/setup_8.x | bash -
+# apt-get -yqq install nodejs
 
 
 useradd automation --shell /bin/bash --create-home
-# Chrome
+# Chrome Driver
 
 apt-get -yqq install supervisor vim fonts-ipafont-gothic xfonts-cyrillic xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable
 
@@ -56,12 +55,11 @@ rm /tmp/chromedriver_linux64.zip && \
 chmod +x /opt/chromedriver-$CHROMEDRIVER_VERSION/chromedriver && \
 ln -fs /opt/chromedriver-$CHROMEDRIVER_VERSION/chromedriver /usr/local/bin/chromedriver
 
+# Chrome Browser
 curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
 echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list && \
 apt-get -yqq update && \
 apt-get -yqq install google-chrome-stable ca-certificates xfonts-75dpi xfonts-base libjpeg62-turbo
-
-
 
 #wkhtml
 wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.buster_amd64.deb
