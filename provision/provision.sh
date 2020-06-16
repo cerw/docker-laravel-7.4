@@ -15,10 +15,10 @@ php-curl php-xml  php7.2-sqlite3 php-mbstring php-xml php-mysqlnd php-curl php-x
 memcached php-memcached php7.2-soap build-essential libpng-dev openntpd php7.2-bcmath mysql-client-5.7 ghostscript
 
 # install latex
-apt-get -y install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra  texlive-latex-extra latexmk
+apt-get -yqq install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra  texlive-latex-extra latexmk
 
 # cypress
-apt-get install libgtk2.0-0 libgtk-3-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
+apt-get  -yqq install systemd libgtk2.0-0 libgtk-3-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
 
 
 /usr/bin/timedatectl set-timezone Australia/Sydney
@@ -40,13 +40,13 @@ chmod 755 /usr/local/bin/composer
 # ------------------------------------------------------------------------------
 
 curl -sL https://deb.nodesource.com/setup_8.x | bash -
-apt-get -y install nodejs
+apt-get -yqq install nodejs
 
 
 useradd automation --shell /bin/bash --create-home
 # Chrome
 
-apt-get -yqq install supervisor  vim fonts-ipafont-gothic xfonts-cyrillic xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable
+apt-get -yqq install supervisor vim fonts-ipafont-gothic xfonts-cyrillic xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable
 
 CHROMEDRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE`
 mkdir -p /opt/chromedriver-$CHROMEDRIVER_VERSION && \
