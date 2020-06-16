@@ -38,9 +38,11 @@ chmod 755 /usr/local/bin/composer
 # Node and npmu
 # ------------------------------------------------------------------------------
 
+curl -sL https://deb.nodesource.com/setup_10.x | bash -
+apt-get -yqq install nodejs
+
 # curl -sL https://deb.nodesource.com/setup_8.x | bash -
 # apt-get -yqq install nodejs
-
 
 useradd automation --shell /bin/bash --create-home
 # Chrome Driver
