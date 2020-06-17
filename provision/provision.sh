@@ -71,9 +71,9 @@ apt-get -yqq update && \
 apt-get -yqq install google-chrome-stable ca-certificates xfonts-75dpi xfonts-base
 
 #wkhtml
-wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.buster_amd64.deb
-dpkg -i wkhtmltox_0.12.6-1.buster_amd64.deb
-rm -rf wkhtmltox_0.12.6-1.buster_amd64.deb
+wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.bionic_amd64.deb
+dpkg -i wkhtmltox_0.12.6-1.bionic_amd64.deb
+rm -rf wkhtmltox_0.12.6-1.bionic_amd64.deb
 
 # clean up 
 rm -rf /var/lib/apt/lists/* 
