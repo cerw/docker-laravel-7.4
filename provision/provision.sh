@@ -12,21 +12,19 @@ localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 apt-get upgrade -y -o Dpkg::Options::="--force-confold"
 
 # ------------------------------------------------------------------------------
-# PHP7
+# PHP7.4
 # ------------------------------------------------------------------------------
 
 # install PHP
-apt-get -y install wget curl php-zip zip php7.2-gd unzip bzip2 php-cli php-imagick imagemagick git \
-php-curl php-xml  php7.2-sqlite3 php-mbstring php-xml php-mysqlnd php-curl php-xdebug \
-memcached php-memcached php7.2-soap build-essential libpng-dev openntpd php7.2-bcmath mysql-client-5.7 ghostscript
+apt-get -y install wget curl php-zip zip php7.4-gd unzip bzip2 php-cli php-imagick imagemagick git \
+php-curl php-xml  php7.4-sqlite3 php-mbstring php-xml php-mysqlnd php-curl php-xdebug \
+memcached php-memcached php7.4-soap build-essential libpng-dev openntpd php7.4-bcmath mysql-client-5.7 ghostscript
 
 # Cypress
-
 apt-get install -y  libgtk2.0-0  libnotify-dev  libgconf-2-4  libnss3 libxss1 libasound2 xvfb libjpeg62
 
 # install latex
 apt-get -yqq install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra  texlive-latex-extra latexmk
-
 
 
 #phpdismod xdebug
@@ -45,7 +43,7 @@ chmod 755 /usr/local/bin/composer
 # Node and npmu
 # ------------------------------------------------------------------------------
 
-curl -sL https://deb.nodesource.com/setup_10.x | bash -
+curl -sL https://deb.nodesource.com/setup_14.x | bash -
 apt-get -yqq install nodejs
 
 # curl -sL https://deb.nodesource.com/setup_8.x | bash -
@@ -54,7 +52,7 @@ apt-get -yqq install nodejs
 useradd automation --shell /bin/bash --create-home
 # Chrome Driver
 
-apt-get -yqq install supervisor vim fonts-ipafont-gothic xfonts-cyrillic xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable
+apt-get -yqq install supervisor vim fonts-ipafont-gothic xfonts-cyrillic xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable poppler-utils
 
 CHROMEDRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE`
 mkdir -p /opt/chromedriver-$CHROMEDRIVER_VERSION && \
@@ -71,9 +69,9 @@ apt-get -yqq update && \
 apt-get -yqq install google-chrome-stable ca-certificates xfonts-75dpi xfonts-base
 
 #wkhtml
-wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.bionic_amd64.deb
-dpkg -i wkhtmltox_0.12.6-1.bionic_amd64.deb
-rm -rf wkhtmltox_0.12.6-1.bionic_amd64.deb
+wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.buster_amd64.deb
+dpkg -i wkhtmltox_0.12.6-1.buster_amd64.deb
+rm -rf wkhtmltox_0.12.6-1.buster_amd64.deb
 
 # clean up 
 rm -rf /var/lib/apt/lists/* 

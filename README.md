@@ -1,2 +1,2 @@
 # docker-laravel
-docker-laravel image with php 7.2
+docker-laravel image with php 7.4

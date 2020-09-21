@@ -2,9 +2,9 @@
 # Start with a base image
 # ------------------------------------------------------------------------------
 
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 LABEL maintainer "Petr Cervenka <petr@cervenka.space>"
-LABEL version="0.6"
+LABEL version="0.7"
 ENV DEBIAN_FRONTEND noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN true
 # ------------------------------------------------------------------------------
@@ -34,7 +34,6 @@ ENV TERM xterm
 ENV npm_config_loglevel warn
 # allow installing when the main user is root
 ENV npm_config_unsafe_perm true
-
 
 ENV LANG en_US.utf8
 
