@@ -16,16 +16,11 @@ apt-get upgrade -y -o Dpkg::Options::="--force-confold"
 # ------------------------------------------------------------------------------
 
 # install PHP
-apt-get -y install wget curl php-zip zip php7.4-gd unzip bzip2 php-cli php-imagick imagemagick git \
-php-curl php-xml  php7.4-sqlite3 php-mbstring php-xml php-mysqlnd php-curl php-xdebug \
-memcached php-memcached php7.4-soap build-essential libpng-dev openntpd php7.4-bcmath mysql-client-5.7 ghostscript
-
-# Cypress
-apt-get install -y  libgtk2.0-0  libnotify-dev  libgconf-2-4  libnss3 libxss1 libasound2 xvfb libjpeg62
-
-# install latex
-apt-get -yqq install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra  texlive-latex-extra latexmk
-
+apt-get -y install gnupg2 apt-utils wget curl php-zip zip php7.4-gd unzip bzip2 php-cli php-imagick imagemagick git \
+php-curl php-xml php7.4-sqlite3 php-mbstring php-xml php-mysqlnd php7.4-curl php-xdebug \
+memcached php-memcached php7.4-soap build-essential libpng-dev openntpd php7.4-bcmath mysql-client ghostscript \
+libgtk2.0-0  libnotify-dev  libgconf-2-4  libnss3 libxss1 libasound2 xvfb libjpeg62  \
+texlive-latex-base texlive-fonts-recommended texlive-fonts-extra  texlive-latex-extra latexmk
 
 #phpdismod xdebug
 #hpdismod -s cli xdebug
@@ -69,9 +64,9 @@ apt-get -yqq update && \
 apt-get -yqq install google-chrome-stable ca-certificates xfonts-75dpi xfonts-base
 
 #wkhtml
-wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.buster_amd64.deb
-dpkg -i wkhtmltox_0.12.6-1.buster_amd64.deb
-rm -rf wkhtmltox_0.12.6-1.buster_amd64.deb
+wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.focal_amd64.deb
+dpkg -i wkhtmltox_0.12.6-1.focal_amd64.deb
+rm -rf wkhtmltox_0.12.6-1.focal_amd64.deb
 
 # clean up 
 rm -rf /var/lib/apt/lists/* 
