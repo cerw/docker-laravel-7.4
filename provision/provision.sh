@@ -18,9 +18,9 @@ apt-get upgrade -y -o Dpkg::Options::="--force-confold"
 # install PHP
 apt-get -y install gnupg2 apt-utils wget curl php-zip zip php7.4-gd unzip bzip2 php-cli php-imagick imagemagick git \
 php-curl php-xml php7.4-sqlite3 php-mbstring php-xml php-mysqlnd php7.4-curl php-xdebug \
-memcached php-memcached php7.4-soap build-essential libpng-dev openntpd php7.4-bcmath mysql-client ghostscript \
+memcached php-memcached php7.4-soap build-essential libpng-dev openntpd php7.4-bcmath ghostscript \
 libgtk2.0-0  libnotify-dev  libgconf-2-4  libnss3 libxss1 libasound2 xvfb libjpeg62  \
-texlive-latex-base texlive-fonts-recommended texlive-fonts-extra  texlive-latex-extra latexmk
+texlive-latex-base texlive-fonts-recommended texlive-fonts-extra  texlive-latex-extra latexmk mariadb-client-10.3
 
 #phpdismod xdebug
 #hpdismod -s cli xdebug
@@ -37,12 +37,8 @@ chmod 755 /usr/local/bin/composer
 # ------------------------------------------------------------------------------
 # Node and npmu
 # ------------------------------------------------------------------------------
-
 curl -sL https://deb.nodesource.com/setup_14.x | bash -
 apt-get -yqq install nodejs
-
-# curl -sL https://deb.nodesource.com/setup_8.x | bash -
-# apt-get -yqq install nodejs
 
 useradd automation --shell /bin/bash --create-home
 # Chrome Driver
