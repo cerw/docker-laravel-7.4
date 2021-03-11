@@ -37,7 +37,7 @@ chmod 755 /usr/local/bin/composer
 # ------------------------------------------------------------------------------
 # Node and npmu
 # ------------------------------------------------------------------------------
-curl -sL https://deb.nodesource.com/setup_14.x | bash -
+curl -sL https://deb.nodesource.com/setup_15.x | bash -
 apt-get -yqq install nodejs
 
 useradd automation --shell /bin/bash --create-home
