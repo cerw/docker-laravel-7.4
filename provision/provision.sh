@@ -20,11 +20,14 @@ apt-get -y install gnupg2 apt-utils wget curl php-zip zip php7.4-gd unzip bzip2 
 php-curl php-xml php7.4-sqlite3 php-mbstring php-xml php-mysqlnd php7.4-curl php-xdebug \
 memcached php-memcached php7.4-soap build-essential libpng-dev openntpd php7.4-bcmath php7.4-tidy ghostscript \
 libgtk2.0-0  libnotify-dev  libgconf-2-4  libnss3 libxss1 libasound2 xvfb libjpeg62  python2-minimal \
-texlive-latex-base texlive-fonts-recommended texlive-fonts-extra  texlive-latex-extra latexmk mariadb-client-10.3 poppler-utils \
+texlive-latex-base texlive-fonts-recommended texlive-fonts-extra  texlive-latex-extra latexmk mysql-client-8.0 poppler-utils \
 python3-pip
 
 
 pip3 install xarray environs mysql-connector-python netCDF4
+
+
+
 
 #phpdismod xdebug
 #hpdismod -s cli xdebug
