@@ -24,7 +24,7 @@ texlive-latex-base texlive-fonts-recommended texlive-fonts-extra  texlive-latex-
 python3-pip
 
 
-pip3 install xarray environs mysql-connector-python netCDF4
+pip3 install xarray environs mysql-connector-python netCDF4 bugsnag
 
 
 
