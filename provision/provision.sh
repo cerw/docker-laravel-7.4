@@ -21,12 +21,9 @@ php-curl php-xml php7.4-sqlite3 php-mbstring php-xml php-mysqlnd php7.4-curl php
 memcached php-memcached php7.4-soap build-essential libpng-dev openntpd php7.4-bcmath php7.4-tidy ghostscript \
 libgtk2.0-0  libnotify-dev  libgconf-2-4  libnss3 libxss1 libasound2 xvfb libjpeg62  python2-minimal \
 texlive-latex-base texlive-fonts-recommended texlive-fonts-extra  texlive-latex-extra latexmk mysql-client-8.0 poppler-utils \
-python3-pip
-
+python3-pip pandoc
 
 pip3 install xarray environs mysql-connector-python netCDF4 bugsnag
-
-
 
 
 #phpdismod xdebug
